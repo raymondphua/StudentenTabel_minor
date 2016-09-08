@@ -10,10 +10,10 @@ include 'Exercise.php';
 include 'Student.php';
 
 $status1 = ['To Do', 'Done', 'Done', 'In Progress', 'To Do'];
-$status2 = ['Done', 'Done', 'Done', 'Done', 'In Progress'];
+$status2 = ['Done', 'Done', 'Done', 'Help', 'In Progress'];
 $status3 = ['Done', 'In Progress', 'To Do', 'To Do', 'To Do'];
 $status4 = ['Help', 'To Do', 'To Do', 'To Do', 'To Do'];
-$status5 = ['Done', 'Done', 'In Progress', 'To Do', 'To Do'];
+$status5 = ['Done', 'Done', 'In Progress', 'Help', 'To Do'];
 
 $exercises1 = array();
 $exercises2 = array();
@@ -26,6 +26,13 @@ for($i = 0; $i < 5; $i++)
     $num = $i+1;
     $exercise = new Exercise($num, 'Opdracht '.$num, $status1[$i]);
     array_push($exercises1, $exercise);
+}
+
+for($i = 0; $i < 5; $i++)
+{
+    $num = $i+1;
+    $exercise = new Exercise($num, 'Opdracht '.$num, $status2[$i]);
+    array_push($exercises2, $exercise);
 }
 
 for($i = 0; $i < 5; $i++)
@@ -92,30 +99,44 @@ $students = [$student1, $student2, $student3, $student4, $student5];
         <th>Opdracht 04</th>
         <th>Opdracht 05</th>
     </tr>
-    <tr>
-        <th>Student 01</th>
-        <td class="active">Need help <span class="glyphicon glyphicon-alert" aria-hidden="true"></span></td>
-        <td class="warning">In progress...</td>
-        <td class="success">Done</td>
-        <td class="danger">To do</td>
-        <td class="danger">To do</td>
-    </tr>
-    <tr>
-        <th>Student 02</th>
-        <td class="active">Need help <span class="glyphicon glyphicon-alert" aria-hidden="true"></span></td>
-        <td class="warning">In progress...</td>
-        <td class="success">Done</td>
-        <td class="danger">To do</td>
-        <td class="danger">To do</td>
-    </tr>
-    <tr>
-        <th>Student 03</th>
-        <td class="active">Need help <span class="glyphicon glyphicon-alert" aria-hidden="true"></span></td>
-        <td class="warning">In progress...</td>
-        <td class="success">Done</td>
-        <td class="danger">To do</td>
-        <td class="danger">To do</td>
-    </tr>
+    <?php
+        foreach ($students as $student)
+        {
+        ?>
+            <tr>
+                <th><?= $student->getFullName(); ?></th>
+                <?php
+                    foreach ($student->getExercises() as $ex)
+                    {
+                        switch ($ex->getStatus())
+                        {
+                            case "To Do":
+                                ?>
+                                <td class="danger">To do</td>
+                                <?php
+                                break;
+                            case "Done":
+                                ?>
+                                <td class="success">Done</td>
+                                <?php
+                                break;
+                            case "In Progress":
+                                ?>
+                                <td class="warning">In progress...</td>
+                                <?php
+                                break;
+                            case "Help":
+                                ?>
+                                <td class="active">Need help <span class="glyphicon glyphicon-alert" aria-hidden="true"></span></td>
+                                <?php
+                                break;
+                        }
+                    }
+                ?>
+            </tr>
+    <?php
+        }
+    ?>
 </table>
 </body>
 </html>
