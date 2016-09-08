@@ -50,8 +50,8 @@ for($i = 0; $i < 5; $i++)
 <div class="container-fluid">
 
 <div class="row">
-    <div class="col-sm-4"><label>Jan Verhoeven</label></div>
-    <div class="col-sm-6"></div>
+    <div class="col-sm-5"></div>
+    <div class="col-sm-5"><h1 align="center">Jan Verhoeven</h1></div>
 <a href="home.php" type="button" class="btn btn-primary col-sm-2"><span class="glyphicon glyphicon-list" aria-hidden="true"> Overview</span></a>
 </div>
 
