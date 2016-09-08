@@ -60,79 +60,79 @@ $exercises25 = array();
 for($i = 0; $i < 5; $i++)
 {
     $num = $i+1;
-    $exercise1 = new Exercise($num, 'Opdracht '.$num, $status1[$i]);
+    $exercise1 = new Exercise($num, 'Opdracht'.$num, $status1[$i]);
     array_push($exercises1, $exercise1);
 
-    $exercise2 = new Exercise($num, 'Opdracht '.$num, $status2[$i]);
+    $exercise2 = new Exercise($num, 'Opdracht'.$num, $status2[$i]);
     array_push($exercises2, $exercise2);
 
-    $exercise3 = new Exercise($num, 'Opdracht '.$num, $status3[$i]);
+    $exercise3 = new Exercise($num, 'Opdracht'.$num, $status3[$i]);
     array_push($exercises3, $exercise3);
 
-    $exercise4 = new Exercise($num, 'Opdracht '.$num, $status4[$i]);
+    $exercise4 = new Exercise($num, 'Opdracht'.$num, $status4[$i]);
     array_push($exercises4, $exercise4);
 
-    $exercise5 = new Exercise($num, 'Opdracht '.$num, $status5[$i]);
+    $exercise5 = new Exercise($num, 'Opdracht'.$num, $status5[$i]);
     array_push($exercises5, $exercise5);
 
-    $exercise6 = new Exercise($num, 'Opdracht '.$num, $status6[$i]);
+    $exercise6 = new Exercise($num, 'Opdracht'.$num, $status6[$i]);
     array_push($exercises6, $exercise6);
 
-    $exercise7 = new Exercise($num, 'Opdracht '.$num, $status7[$i]);
+    $exercise7 = new Exercise($num, 'Opdracht'.$num, $status7[$i]);
     array_push($exercises7, $exercise7);
 
-    $exercise8 = new Exercise($num, 'Opdracht '.$num, $status8[$i]);
+    $exercise8 = new Exercise($num, 'Opdracht'.$num, $status8[$i]);
     array_push($exercises8, $exercise8);
 
-    $exercise9 = new Exercise($num, 'Opdracht '.$num, $status9[$i]);
+    $exercise9 = new Exercise($num, 'Opdracht'.$num, $status9[$i]);
     array_push($exercises9, $exercise9);
 
-    $exercise10 = new Exercise($num, 'Opdracht '.$num, $status10[$i]);
+    $exercise10 = new Exercise($num, 'Opdracht'.$num, $status10[$i]);
     array_push($exercises10, $exercise10);
 
-    $exercise11 = new Exercise($num, 'Opdracht '.$num, $status11[$i]);
+    $exercise11 = new Exercise($num, 'Opdracht'.$num, $status11[$i]);
     array_push($exercises11, $exercise11);
 
-    $exercise12 = new Exercise($num, 'Opdracht '.$num, $status12[$i]);
+    $exercise12 = new Exercise($num, 'Opdracht'.$num, $status12[$i]);
     array_push($exercises12, $exercise12);
 
-    $exercise13 = new Exercise($num, 'Opdracht '.$num, $status13[$i]);
+    $exercise13 = new Exercise($num, 'Opdracht'.$num, $status13[$i]);
     array_push($exercises13, $exercise13);
 
-    $exercise14 = new Exercise($num, 'Opdracht '.$num, $status14[$i]);
+    $exercise14 = new Exercise($num, 'Opdracht'.$num, $status14[$i]);
     array_push($exercises14, $exercise14);
 
-    $exercise15 = new Exercise($num, 'Opdracht '.$num, $status15[$i]);
+    $exercise15 = new Exercise($num, 'Opdracht'.$num, $status15[$i]);
     array_push($exercises15, $exercise15);
 
-    $exercise16 = new Exercise($num, 'Opdracht '.$num, $status16[$i]);
+    $exercise16 = new Exercise($num, 'Opdracht'.$num, $status16[$i]);
     array_push($exercises16, $exercise16);
 
-    $exercise17 = new Exercise($num, 'Opdracht '.$num, $status17[$i]);
+    $exercise17 = new Exercise($num, 'Opdracht'.$num, $status17[$i]);
     array_push($exercises17, $exercise17);
 
-    $exercise18 = new Exercise($num, 'Opdracht '.$num, $status18[$i]);
+    $exercise18 = new Exercise($num, 'Opdracht'.$num, $status18[$i]);
     array_push($exercises18, $exercise18);
 
-    $exercise19 = new Exercise($num, 'Opdracht '.$num, $status19[$i]);
+    $exercise19 = new Exercise($num, 'Opdracht'.$num, $status19[$i]);
     array_push($exercises19, $exercise19);
 
-    $exercise20 = new Exercise($num, 'Opdracht '.$num, $status20[$i]);
+    $exercise20 = new Exercise($num, 'Opdracht'.$num, $status20[$i]);
     array_push($exercises20, $exercise20);
 
-    $exercise21 = new Exercise($num, 'Opdracht '.$num, $statusSlim[$i]);
+    $exercise21 = new Exercise($num, 'Opdracht'.$num, $statusSlim[$i]);
     array_push($exercises21, $exercise21);
 
-    $exercise22 = new Exercise($num, 'Opdracht '.$num, $statusSlim[$i]);
+    $exercise22 = new Exercise($num, 'Opdracht'.$num, $statusSlim[$i]);
     array_push($exercises22, $exercise22);
 
-    $exercise23 = new Exercise($num, 'Opdracht '.$num, $statusSlim[$i]);
+    $exercise23 = new Exercise($num, 'Opdracht'.$num, $statusSlim[$i]);
     array_push($exercises23, $exercise23);
 
-    $exercise24 = new Exercise($num, 'Opdracht '.$num, $statusSlim[$i]);
+    $exercise24 = new Exercise($num, 'Opdracht'.$num, $statusSlim[$i]);
     array_push($exercises24, $exercise24);
 
-    $exercise25 = new Exercise($num, 'Opdracht '.$num, $statusSlim[$i]);
+    $exercise25 = new Exercise($num, 'Opdracht'.$num, $statusSlim[$i]);
     array_push($exercises25, $exercise25);
 }
 
@@ -197,7 +197,7 @@ $student19->setExercises($exercises19);
 $student20 = new Student(20, "Tim", "Goud", "4Hd");
 $student20->setExercises($exercises20);
 
-$student21 = new Student(21, "Jan", "Verhoeven", "4Ha");
+$student21 = new Student(21, "Test", "Persoon", "4Ha");
 $student21->setExercises($exercises21);
 
 $student22 = new Student(22, "Ash", "Ketchum", "4Hb");

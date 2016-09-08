@@ -34,4 +34,10 @@ class Exercise
     {
         return $this->status;
     }
+
+    //Setters
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
 }

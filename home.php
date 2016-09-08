@@ -8,6 +8,37 @@
 
 include "data.php";
 
+session_start();
+
+if (!isset($_SESSION['students']))
+{
+    $_SESSION['students'] = $students;
+}
+
+if (!isset($_POST))
+{
+    $id = $_POST['id'];
+    foreach($_SESSION['students'] as $editedStudent)
+    {
+        if ($editedStudent->getId() == $id)
+        {
+            foreach($_POST as $key => $value)
+            {
+                foreach($editedStudent->getExercises() as $exercise)
+                {
+                    if ($key == $exercise->getName())
+                    {
+                        if ($value != $exercise->getStatus())
+                        {
+                            $exercise->setStatus($value);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +84,7 @@ include "data.php";
                 </tr>
 
                 <?php
-                foreach ($students as $student)
+                foreach ($_SESSION['students'] as $student)
                 {
                     ?>
                     <tr>

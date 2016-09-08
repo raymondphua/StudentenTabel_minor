@@ -6,7 +6,7 @@
  * Time: 11:42
  */
 
-include "data.php";
+session_start();
 
 ?>
 
@@ -50,8 +50,10 @@ include "data.php";
     <form action="home.php" method="post">
         <div class="form-group">
 
+            <input type="hidden" name="id" value="<?= $_SESSION['students'][0]->getId(); ?>" />
+
             <?php
-                foreach ($exercises1 as $ex)
+                foreach ($_SESSION['students'][0]->getExercises() as $ex)
                 {
                     ?>
                     <div class="row">
@@ -66,7 +68,7 @@ include "data.php";
                             case "To Do":
                                 ?>
                                 <div class="col-sm-6">
-                                    <select name="status" class="form-control">
+                                    <select name="<?= $ex->getName(); ?>" class="form-control">
                                         <option value="Help">Help</option>
                                         <option value="To Do" selected>To Do</option>
                                         <option value="In Progress">In progress...</option>
@@ -78,7 +80,7 @@ include "data.php";
                             case "Done":
                                 ?>
                                 <div class="col-sm-6">
-                                    <select name="status" class="form-control">
+                                    <select name="<?= $ex->getName() ?>" class="form-control">
                                         <option value="Help">Help</option>
                                         <option value="To Do">To Do</option>
                                         <option value="In Progress">In progress...</option>
@@ -90,7 +92,7 @@ include "data.php";
                             case "In Progress":
                                 ?>
                                 <div class="col-sm-6">
-                                    <select name="status" class="form-control">
+                                    <select name="<?= $ex->getName() ?>" class="form-control">
                                         <option value="Help">Help</option>
                                         <option value="To Do">To Do</option>
                                         <option value="In Progress" selected>In progress...</option>
@@ -102,7 +104,7 @@ include "data.php";
                             case "Help":
                                 ?>
                                 <div class="col-sm-6">
-                                    <select name="status" class="form-control">
+                                    <select name="<?= $ex->getName() ?>" class="form-control">
                                         <option value="Help" selected>Help</option>
                                         <option value="To Do">To Do</option>
                                         <option value="In Progress">In progress...</option>
