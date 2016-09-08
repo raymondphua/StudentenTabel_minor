@@ -24,7 +24,40 @@
 </head>
 
 <body>
-<button class="btn btn-default">test</button>
-<?php echo "dit is ons pagina." ?>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>#</th>
+        <th>Opdracht 01</th>
+        <th>Opdracht 02</th>
+        <th>Opdracht 03</th>
+        <th>Opdracht 04</th>
+        <th>Opdracht 05</th>
+    </tr>
+    <tr>
+        <th>Student 01</th>
+        <td class="active">Need help <span class="glyphicon glyphicon-alert" aria-hidden="true"></span></td>
+        <td class="warning">In progress...</td>
+        <td class="success">Done</td>
+        <td class="danger">To do</td>
+        <td class="danger">To do</td>
+    </tr>
+    <tr>
+        <th>Student 02</th>
+        <td class="active">Need help <span class="glyphicon glyphicon-alert" aria-hidden="true"></span></td>
+        <td class="warning">In progress...</td>
+        <td class="success">Done</td>
+        <td class="danger">To do</td>
+        <td class="danger">To do</td>
+    </tr>
+    <tr>
+        <th>Student 03</th>
+        <td class="active">Need help <span class="glyphicon glyphicon-alert" aria-hidden="true"></span></td>
+        <td class="warning">In progress...</td>
+        <td class="success">Done</td>
+        <td class="danger">To do</td>
+        <td class="danger">To do</td>
+    </tr>
+</table>
+
 </body>
 </html>
