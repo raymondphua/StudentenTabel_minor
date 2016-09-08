@@ -6,6 +6,65 @@
  * Time: 09:16
  */
 
+include 'Exercise.php';
+include 'Student.php';
+
+$status1 = ['To Do', 'Done', 'Done', 'In Progress', 'To Do'];
+$status2 = ['Done', 'Done', 'Done', 'Done', 'In Progress'];
+$status3 = ['Done', 'In Progress', 'To Do', 'To Do', 'To Do'];
+$status4 = ['Help', 'To Do', 'To Do', 'To Do', 'To Do'];
+$status5 = ['Done', 'Done', 'In Progress', 'To Do', 'To Do'];
+
+$exercises1 = array();
+$exercises2 = array();
+$exercises3 = array();
+$exercises4 = array();
+$exercises5 = array();
+
+for($i = 0; $i < 5; $i++)
+{
+    $num = $i+1;
+    $exercise = new Exercise($num, 'Opdracht '.$num, $status1[$i]);
+    array_push($exercises1, $exercise);
+}
+
+for($i = 0; $i < 5; $i++)
+{
+    $num = $i+1;
+    $exercise = new Exercise($num, 'Opdracht '.$num, $status3[$i]);
+    array_push($exercises3, $exercise);
+}
+
+for($i = 0; $i < 5; $i++)
+{
+    $num = $i+1;
+    $exercise = new Exercise($num, 'Opdracht '.$num, $status4[$i]);
+    array_push($exercises4, $exercise);
+}
+
+for($i = 0; $i < 5; $i++)
+{
+    $num = $i+1;
+    $exercise = new Exercise($num, 'Opdracht '.$num, $status5[$i]);
+    array_push($exercises5, $exercise);
+}
+
+$student1 = new Student(1, "Jan", "Verhoeven", "4Ha");
+$student1->setExercises($exercises1);
+
+$student2 = new Student(2, "Ash", "Ketchum", "4Hb");
+$student2->setExercises($exercises2);
+
+$student3 = new Student(3, "Piet", "Klaassen", "4Hb");
+$student3->setExercises($exercises3);
+
+$student4 = new Student(4, "Nick", "van der Poel", "4He");
+$student4->setExercises($exercises4);
+
+$student5 = new Student(5, "Oliver", "Smith", "4Hf");
+$student5->setExercises($exercises5);
+
+$students = [$student1, $student2, $student3, $student4, $student5];
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +83,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 <table class="table table-hover table-striped">
     <tr>
         <th>#</th>
@@ -58,6 +118,5 @@
         <td class="danger">To do</td>
     </tr>
 </table>
-
 </body>
 </html>
