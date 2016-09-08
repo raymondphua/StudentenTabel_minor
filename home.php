@@ -78,7 +78,7 @@ $students = [$student1, $student2, $student3, $student4, $student5];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
+    <title>Overview page</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -90,53 +90,70 @@ $students = [$student1, $student2, $student3, $student4, $student5];
 </head>
 
 <body>
-<table class="table table-hover table-striped">
-    <tr>
-        <th>#</th>
-        <th>Opdracht 01</th>
-        <th>Opdracht 02</th>
-        <th>Opdracht 03</th>
-        <th>Opdracht 04</th>
-        <th>Opdracht 05</th>
-    </tr>
-    <?php
-        foreach ($students as $student)
-        {
-        ?>
-            <tr>
-                <th><?= $student->getFullName(); ?></th>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-10"></div>
+        <div class="col-sm-2">
+            <a href="edit.php"  style="float: right; position: static" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"> Edit status</span></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-hover table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>Exercise 01</th>
+                    <th>Exercise 02</th>
+                    <th>Exercise 03</th>
+                    <th>Exercise 04</th>
+                    <th>Exercise 05</th>
+                </tr>
                 <?php
-                    foreach ($student->getExercises() as $ex)
-                    {
-                        switch ($ex->getStatus())
+                foreach ($students as $student)
+                {
+                    ?>
+                    <tr>
+                        <th><?= $student->getFullName(); ?></th>
+                        <?php
+                        foreach ($student->getExercises() as $ex)
                         {
-                            case "To Do":
-                                ?>
-                                <td class="danger">To do</td>
-                                <?php
-                                break;
-                            case "Done":
-                                ?>
-                                <td class="success">Done</td>
-                                <?php
-                                break;
-                            case "In Progress":
-                                ?>
-                                <td class="warning">In progress...</td>
-                                <?php
-                                break;
-                            case "Help":
-                                ?>
-                                <td class="active">Need help <span class="glyphicon glyphicon-alert" aria-hidden="true"></span></td>
-                                <?php
-                                break;
+                            switch ($ex->getStatus())
+                            {
+                                case "To Do":
+                                    ?>
+                                    <td class="danger">To do</td>
+                                    <?php
+                                    break;
+                                case "Done":
+                                    ?>
+                                    <td class="success">Done</td>
+                                    <?php
+                                    break;
+                                case "In Progress":
+                                    ?>
+                                    <td class="warning">In progress...</td>
+                                    <?php
+                                    break;
+                                case "Help":
+                                    ?>
+                                    <td class="active">Need help <span class="glyphicon glyphicon-alert" aria-hidden="true"></span></td>
+                                    <?php
+                                    break;
+                            }
                         }
-                    }
+                        ?>
+                    </tr>
+                    <?php
+                }
                 ?>
-            </tr>
-    <?php
-        }
-    ?>
-</table>
+            </table>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
