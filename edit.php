@@ -8,6 +8,19 @@
 
 include "data.php";
 
+if (isset($_GET))
+{
+    $studentId = $_GET['id'];
+    foreach ($students as $student)
+    {
+        if ($student->getId() == $studentId)
+        {
+            $currentStudent = $student;
+            break;
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +43,7 @@ include "data.php";
     <![endif]-->
 <style>
     .wrapper {
-        max-width: 600px;
+        max-width: 400px;
         margin: 0 auto;
     }
 </style>
@@ -39,24 +52,25 @@ include "data.php";
 
 <div class="container-fluid">
 
-<div class="row">
-    <div class="col-sm-5"></div>
-    <div class="col-sm-5"><h1 align="center">Jan Verhoeven</h1></div>
-<a href="home.php" type="button" class="btn btn-primary col-sm-2"><span class="glyphicon glyphicon-list" aria-hidden="true"> Overview</span></a>
-</div>
-
     <div class="wrapper">
+        <div class="row">
+            <div class="col-sm-10"><h1><?= $currentStudent->getFullName(); ?></h1></div>
+            <div class="col-sm-2">
+                <a href="home.php" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-list" aria-hidden="true"> Overview</span></a>
+            </div>
+        </div>
 <div class="row">
     <form action="home.php" method="post">
         <div class="form-group">
 
             <?php
-                foreach ($exercises1 as $ex)
+                foreach ($currentStudent->getExercises() as $ex)
                 {
                     ?>
+                    <input type="hidden" name="studentId" value="<?= $currentStudent->getId(); ?>">
                     <div class="row">
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-3">
                             <label><?= $ex->getName(); ?></label>
                         </div>
 

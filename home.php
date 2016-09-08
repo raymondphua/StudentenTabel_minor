@@ -32,14 +32,6 @@ include "data.php";
 <body>
 
 <div class="container-fluid">
-
-    <div class="row">
-        <div class="col-sm-10"></div>
-        <div class="col-sm-2">
-            <a href="edit.php"  style="float: right; position: static" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"> Edit status</span></a>
-        </div>
-    </div>
-
     <div class="row">
         <div class="col-sm-12">
             <table class="table table-hover table-striped">
@@ -57,7 +49,7 @@ include "data.php";
                 {
                     ?>
                     <tr>
-                        <th><?= $student->getFullName(). " ". $student->getClass(); ?></th>
+                        <th><a href="edit.php?id=<?= $student->getId(); ?>"><?= $student->getFullName(). " ". $student->getClass() . " "; ?></a></th>
                         <?php
                         foreach ($student->getExercises() as $ex)
                         {
