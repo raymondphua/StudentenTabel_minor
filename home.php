@@ -83,7 +83,6 @@ $students = [$student1, $student2, $student3, $student4, $student5];
 </head>
 
 <body>
-<<<<<<< HEAD
 <table class="table table-hover table-striped">
     <tr>
         <th>#</th>
