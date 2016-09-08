@@ -6,17 +6,7 @@
  * Time: 11:42
  */
 
-include "Exercise.php";
-
-$status1 = ['To Do', 'Done', 'Done', 'In Progress', 'To Do'];
-$exercises1 = array();
-
-for($i = 0; $i < 5; $i++)
-{
-    $num = $i+1;
-    $exercise = new Exercise($num, 'Opdracht '.$num, $status1[$i]);
-    array_push($exercises1, $exercise);
-}
+include "data.php";
 
 ?>
 
