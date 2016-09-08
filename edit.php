@@ -6,13 +6,15 @@
  * Time: 11:42
  */
 
-include "data.php";
-
+session_start();
+//$students = $_SESSION['students'];
+include 'data.php';
 if (isset($_GET))
 {
     $studentId = $_GET['id'];
     foreach ($students as $student)
     {
+//        var_dump($test);
         if ($student->getId() == $studentId)
         {
             $currentStudent = $student;
@@ -65,9 +67,10 @@ if (isset($_GET))
 
             <?php
                 foreach ($currentStudent->getExercises() as $ex)
+
                 {
                     ?>
-                    <input type="hidden" name="studentId" value="<?= $currentStudent->getId(); ?>">
+                    <input type="hidden" name="id" value="<?= $currentStudent->getId(); ?>">
                     <div class="row">
 
                         <div class="col-sm-3">
@@ -80,7 +83,7 @@ if (isset($_GET))
                             case "To Do":
                                 ?>
                                 <div class="col-sm-6">
-                                    <select name="status" class="form-control">
+                                    <select name="<?= $ex->getName(); ?>" class="form-control">
                                         <option value="Help">Help</option>
                                         <option value="To Do" selected>To Do</option>
                                         <option value="In Progress">In progress...</option>
@@ -92,7 +95,7 @@ if (isset($_GET))
                             case "Done":
                                 ?>
                                 <div class="col-sm-6">
-                                    <select name="status" class="form-control">
+                                    <select name="<?= $ex->getName() ?>" class="form-control">
                                         <option value="Help">Help</option>
                                         <option value="To Do">To Do</option>
                                         <option value="In Progress">In progress...</option>
@@ -104,7 +107,7 @@ if (isset($_GET))
                             case "In Progress":
                                 ?>
                                 <div class="col-sm-6">
-                                    <select name="status" class="form-control">
+                                    <select name="<?= $ex->getName() ?>" class="form-control">
                                         <option value="Help">Help</option>
                                         <option value="To Do">To Do</option>
                                         <option value="In Progress" selected>In progress...</option>
@@ -116,7 +119,7 @@ if (isset($_GET))
                             case "Help":
                                 ?>
                                 <div class="col-sm-6">
-                                    <select name="status" class="form-control">
+                                    <select name="<?= $ex->getName() ?>" class="form-control">
                                         <option value="Help" selected>Help</option>
                                         <option value="To Do">To Do</option>
                                         <option value="In Progress">In progress...</option>
